@@ -19,11 +19,11 @@ public class HomeController {
 		String nextPage = "home";
 		
 		try {
-			
-			Class.forName("oracle.jdbc.OracleDriver");
+		
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:XE", 
-					"system", 
+					"jdbc:mysql://14.42.124.94:3306/DB_KIOSK?serverTimezone=Asia/Seoul", 
+					"root", 
 					"1234");
 			
 			log.info("conn: " + conn);
@@ -31,7 +31,22 @@ public class HomeController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			
-		}
+		}		
+
+//		try {
+//			
+//			Class.forName("oracle.jdbc.OracleDriver");
+//			Connection conn = DriverManager.getConnection(
+//					"jdbc:oracle:thin:@14.42.124.122:1521:XE", 
+//					"system", 
+//					"1234");
+//			
+//			log.info("conn: " + conn);
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			
+//		}
 		
 		
 		return nextPage;
